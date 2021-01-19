@@ -4,7 +4,10 @@
       <div class="col-md-6"> <!-- Title -->
         <h1><a class="title" href="">Spring Blog</a></h1>
       </div>
-      <div class="col-md-6"> <!-- Login and Register -->
+      <div class="col-md-3" *ngIf="authService.isAuthenticated()"> <!-- New Post -->
+        <a class="new-post" href="/add-post">Add Post</a>
+      </div>
+      <div class="col-md-3"> <!-- Login and Register -->
         <a class="login btn btn-default" href="/login">Login</a>
         <a class="register btn btn-default" href="/register">Register</a>
       </div>
