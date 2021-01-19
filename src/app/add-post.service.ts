@@ -13,4 +13,12 @@ export class AddPostService {
   addPost(postPayLoad: PostPayload): Observable<any> {
     return this.httpClient.post('http://localhost:8080/api/posts/', postPayLoad);
   }
+
+  getAllPosts(): Observable<Array<PostPayload>> {
+    return this.httpClient.get<Array<PostPayload>>('http://localhost:8080/api/posts/all');
+  }
+
+  getPost(permaLink: number): Observable<PostPayload> {
+    return this.httpClient.get<PostPayload>('http://localhost:8080/api/posts/get/' + permaLink);
+  }
 }
