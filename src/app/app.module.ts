@@ -16,6 +16,7 @@ import { AddPostComponent } from './add-post/add-post.component';
 import {EditorModule} from '@tinymce/tinymce-angular';
 import {HttpClientInterceptor} from './http-client-interceptor';
 import { PostComponent } from './post/post.component';
+import {AuthGuard} from './auth.guard';
 
 @NgModule({
   declarations: [
@@ -37,11 +38,11 @@ import { PostComponent } from './post/post.component';
     RouterModule.forRoot([
       {path: '', component: HomeComponent},
       {path: 'home', component: HomeComponent},
-      {path: 'post/:id', component: PostComponent},
+      {path: 'post/:id', component: PostComponent, canActivate: [AuthGuard]},
       {path: 'register', component: RegisterComponent},
       {path: 'login', component: LoginComponent},
       {path: 'register-success', component: RegisterSuccessComponent},
-      {path: 'add-post', component: AddPostComponent}
+      {path: 'add-post', component: AddPostComponent, canActivate: [AuthGuard]}
     ]),
     HttpClientModule,
     EditorModule

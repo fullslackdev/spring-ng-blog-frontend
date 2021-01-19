@@ -15,8 +15,13 @@
   padding-top: 10px;
 }
 
-.new-post {
+.new-post, .logout {
   float: right;
   color: aliceblue;
   padding-top: 10px;
+}
+
+.new-post:hover, .logout:hover {
+  color: aliceblue;
+  text-decoration: none;
 }
